@@ -5,5 +5,5 @@
 ## Exploratory Data Analysis
 
 ### Descriptive Statistics
-![info columns dataset](https://github.com/hazim17/FInal-Project_Bank-Marketing-Targets/blob/main/info.png?raw=true)
+<img src="[/path/to/img.jpg](https://drive.google.com/file/d/1433ihy7QZnMPPgS4EI-zPv8PAvQV9V-o/view?usp=sharing)" alt="Alt text" title="Info columns">
 
