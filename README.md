@@ -1,6 +1,11 @@
 # FInal-Project_Bank-Marketing-Targets
 
 ## Problem - Goals - Business matrics
+- **Problem:** Jumlah nasabah bank yang telah mendaftar deposito berjangka pada Perusahaan Bank ABC masih rendah jika dibandingkan dengan total nasabah bank tersebut. Dari total 45.211 nasabah yang ada, hanya sekitar 11,7 % nasabah saja yang mendaftar deposito berjangka.
+- **Goals:** Meningkatkan jumlah nasabah bank yang mendaftar deposito berjangka hingga sebesar 20% atau dapat dikatakan  1 dari 5 nasabah bank mendaftar deposito berjangka
+- **Objective:** Melakukan klasifikasi pada customer bank tersebut, sehingga nasabah yang sekiranya tertarik untuk membuka deposito berjangka dapat diprioritaskan terlebih dahulu untuk dihubungi/ditawari deposito berjangka.
+- **Business metrics (yang dapat diukur, untuk tahu berhasil atau tidak):**
+  - Jumlah nasabah yang mendaftar deposito berjangka
 
 ## Exploratory Data Analysis
 
@@ -15,6 +20,7 @@ Kita dapat melihat bahwa:
 - Sisanya adalah feature (predictor)
 
 ### Duplicate Value
+<img src="image-stage1/duplicate val.png" alt="Alt text" title="duplicate">
 ![duplicate val](image-stage1/duplicate val.png)
 
 Dataset tidak memiliki duplicate value
