@@ -50,10 +50,10 @@ Beberapa pengamatan dari *statistical summary* kolom kategorikal di atas:
 
 ### Univariate Analysis
 #### Outliers
-<img src="/image-stage1/outlier.png" alt="Alt text" >
+<img src="/image-stage1/outlier1.png" alt="Alt text" >
 
 #### Distribution Plot
-<img src="/image-stage1/distplot.png" alt="Alt text">
+<img src="/image-stage1/distplot1.png" alt="Alt text">
 
     Mengenai bentuk distribusi dapat dipastikan bahwa:
 - Untuk kolom `balance`, `duration`, `campaign`, `pdays` dan `previous` memiliki distribusi yang terlihat *skewed positif*
@@ -66,7 +66,7 @@ Beberapa pengamatan dari *statistical summary* kolom kategorikal di atas:
 - Untuk features yg sebagian besar datanya merupakan outlier jika seandainya pada tahap preprocessing diputuskan untuk melakukan pembersihan terhadap outlier tersebut,sebaiknya dilakukan dengan menetapkan sebuah treshold. Misalkan dengan menetapkan treshold yaitu percentile 95% atau 99%. Sehingga dengan demikian data yang terbuang akibat preprocessing outlier tidak terlalu banyak.
 
 #### Categorical Distribution
-<img src="/image-stage1/cat distribution.png" alt="Alt text">
+<img src="/image-stage1/cat distribution1.png" alt="Alt text">
 
 - Untuk feature `job` meskipun memiliki nilai unique yang banyak dapat dilihat bahwa didominasi hanya oleh 5 jenis pekerjaan yaitu "blue-collar", "management", "technician", "admin", dan "services". Pada saat tahap preprocessing selain dari 5 jenis pekerjaan tersebut dapat dijadikan satu kelompok menjadi jenis "others".
 - Seperti pengamatan kita sebelumnya, distribusi kolom target yaitu kolom `y` memiliki 2 value yaitu "yes" dan "no". Namun frekuensi antara value "yes" dan "no" tidak seimbang, dimana value "yes" hanya berkisar 11,7% dari keseluruhan value. Oleh sebab itu nanti harus dilakukan **Oversampling**.
