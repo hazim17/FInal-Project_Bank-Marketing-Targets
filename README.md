@@ -5,5 +5,5 @@
 ## Exploratory Data Analysis
 
 ### Descriptive Statistics
-<img src="[/path/to/img.jpg](https://drive.google.com/file/d/1433ihy7QZnMPPgS4EI-zPv8PAvQV9V-o/view?usp=sharing)" alt="Alt text" title="Info columns">
+![My Image](image-stage1/info.png)
 
