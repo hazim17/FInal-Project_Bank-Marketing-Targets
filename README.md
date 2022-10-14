@@ -25,7 +25,7 @@ Kita dapat melihat bahwa:
 Dataset tidak memiliki duplicate value
 
 ### Statistical Summary
-#### Numeric Columns
+#### **Numeric Columns**
 <img src="/image-stage1/num_describe.png" alt="Alt text">
 
 Beberapa pengamatan dari *statistical summary* kolom numerik di atas:
@@ -41,7 +41,7 @@ Untuk membuktikan argumentasi mengenai bentuk distribusi setiap kolom berdasarka
 
 - Berarti untuk sementara bentuk persebaran data dapat dilihat bahwa ternyata hanya kolom `age` yang berdistribusi normal/simetrik selebihnya mengalami positif skewness. Namun untuk lebih pastinya lagi akan dilakukan dengan pengecekkan secara visualisasi bentuk distribusi setiap kolom saat melakukan Univariate Analysis
 
-#### Categorical Columns
+#### **Categorical Columns**
 <img src="/image-stage1/cat_descirbe.png" alt="Alt text" >
 
 Beberapa pengamatan dari *statistical summary* kolom kategorikal di atas:
@@ -49,10 +49,10 @@ Beberapa pengamatan dari *statistical summary* kolom kategorikal di atas:
 - Mayoritas data customer memilih "no" untuk membuka deposito (dengan frekuensi 39922 dari 45211 data yang ada). Dimana artinya data customer yang memilih untuk membuka deposito hanya sekitar 11,7% dari total data. Hal ini tentunya menjadi suatu permasalahan dikarenakan dapat membuat model menjadi overfit. Harus dilakukan oversampling.
 
 ### Univariate Analysis
-#### Outliers
+#### **Outliers**
 <img src="/image-stage1/outlier1.png" alt="Alt text" >
 
-#### Distribution Plot
+#### **Distribution Plot**
 <img src="/image-stage1/distplot1.png" alt="Alt text">
 
     Mengenai bentuk distribusi dapat dipastikan bahwa:
@@ -65,7 +65,7 @@ Beberapa pengamatan dari *statistical summary* kolom kategorikal di atas:
 - Dari boxplot dapat dilihat bahwa outlier terlihat utamanya pada kolom `age`, `balance`, `duration`, `campaign`, `pdays` dan `previous`, Pada tahap preprocessing nanti akan dilakukan pengambilan keputusan dalam menghadapi outlier-outlier tersebut.
 - Untuk features yg sebagian besar datanya merupakan outlier jika seandainya pada tahap preprocessing diputuskan untuk melakukan pembersihan terhadap outlier tersebut,sebaiknya dilakukan dengan menetapkan sebuah treshold. Misalkan dengan menetapkan treshold yaitu percentile 95% atau 99%. Sehingga dengan demikian data yang terbuang akibat preprocessing outlier tidak terlalu banyak.
 
-#### Categorical Distribution
+#### **Categorical Distribution**
 <img src="/image-stage1/cat_distribution1.png" alt="Alt text">
 
 - Untuk feature `job` meskipun memiliki nilai unique yang banyak dapat dilihat bahwa didominasi hanya oleh 5 jenis pekerjaan yaitu "blue-collar", "management", "technician", "admin", dan "services". Pada saat tahap preprocessing selain dari 5 jenis pekerjaan tersebut dapat dijadikan satu kelompok menjadi jenis "others".
@@ -75,18 +75,18 @@ Beberapa pengamatan dari *statistical summary* kolom kategorikal di atas:
 
 
 ### Multivariate Analysis
-#### Monthly Yes
+#### **Monthly Yes**
 <img src="/image-stage1/yes ratio.png" alt="Alt text">
 
 * Dapat dilihat bahwa pada bulan may persentase customer yang melakukan pendaftaran deposito sedikit lebih tinggi dibandingkan bulan-bulan lainnya. Namun jika kita melihat secara keseluruhan pada setiap bulannya jumlah customer yang mendaftar tidaklah berbeda jauh antara satu bulan ke bulan lainnya, bahkan semua bulan tidak ada yg memiliki persentase "yes" lebih besar dari 0,2%. Hal ini dapat menjadi landasan jika kita memutuskan untuk tidak menggunakan feature `month` terhadap model yang akan kita dibuat, dikarenakan feature `month` tidak memiliki pengaruh yang signifikan perihal seorang customer tertarik mendaftar deposito berjangka.
 
-#### Previous
+#### **Previous**
 <img src="/image-stage1/previous.png" alt="Alt text" >
 
 * Dapat dilihat bahwa sebanyak lebih dari 35000 nasabah (tepatnya 36954) memiliki previous 0, dimana hal tersebut berarti nasabah belum pernah dihubungi pada campaign sebelumnya. Artinya sekitar 81% nasabah belum pernah dihubungi pada campaign sebelumnya. Dengan hal ini menunjukkan bahwa fitur `previous` tidak berpengaruh terhadap outcome y dikarenakan mayoritas dari customer memang belum pernah dihubungi pada campaign sebelumnya. Oleh sebab itu hal ini dapat dijadikan sebagai landasan kita apabila ingin memutuskan untuk tidak menggunakan feature `previous` terhadap model yang akan kita dibuat.
 
 
-#### Correlation
+#### **Correlation**
 <img src="/image-stage1/heatmap.png" alt="Alt text">
 
 * Tidak ada features numerical yang berkorelasi kuat dan dapat dilihat juga bahwa pada features numerical tidak ada yang redundan
@@ -94,17 +94,17 @@ Beberapa pengamatan dari *statistical summary* kolom kategorikal di atas:
 
 
 ### Business Insight
-#### Education
+#### **Education**
 <img src="/image-stage1/bi_edu.png" alt="Alt text">
 
 * Dapat dilihat bahwa tingkat edukasi ternyata juga berpengaruh dalam keputusan seorang customer memilih untuk mendaftar deposito berjangka. Dari visualisasi diatas dapat dilihat bahwa kelompok education secondary dan tertiary merupakan kelompok education yang paling banyak memilih untuk mendaftar deposito berjangka, namun terlihat sangat jauh perbedaannya dengan kelompok education primary. Kiranya pihak bank bisa mulai melakukan kerjasama dengan sektor pendidikan untuk melakukan edukasi kepada anak-anak muda dengan cara memberikan seminar-seminar mengenai pentingnya berinvestasi (dalam konteks ini contohnya adalah deposito). Dengan demikian kesadaran dan keinginan untuk berinvestasi pun akan mulai tumbuh kepada generasi muda sehingga secara tidak langsung akan berpeluang meningkatkan jumlah orang yang akan membuka deposito dari segala tingkat pendidikan.
 
-#### Contact
+#### **Contact**
 <img src="/image-stage1/bi_contact.png" alt="Alt text" >
 
 * Bisa dilihat melalui visualisasi diatas bahwa tipe contact cellular merupakan tipe contact yang paling banyak menghasilkan customer untuk mendaftar deposito berjangka. Hal ini bisa terjadi karena di era sekarang ini orang-orang lebih banyak melakukan komunikasi melalui telepon celullar dibandingkan telepon biasa, dan hampir setiap orang pasti mempunyai telepon cellular. Dari sini pihak bank dapat mulai merubah strategi campaign untuk memprioritaskan melakukan contact melalui telepon celullar. Selain itu pihak bank sebelum melakukan panggilan secara langsung ke nomor telepon celullar, bisa juga bisa melakukan campaign melalui email atau melalui whatsapp sebagai tahapan awal dalam menawarkan deposito berjangka. Dengan demikian peluang customer yang mendaftar deposito berjangka akan meningkat.
 
-#### Marital
+#### **Marital**
 <img src="/image-stage1/bi_marital.png" alt="Alt text" >
 
 
@@ -115,26 +115,27 @@ Beberapa pengamatan dari *statistical summary* kolom kategorikal di atas:
 
 ### Data Cleansing
 
-#### Missing Values & Duplicate Data
+#### **Missing Values & Duplicate Data**
 Pada data ini tidak ada missing values dan duplicate data
 
-#### Handling Outlier
+#### **Handling Outlier**
 Untuk sementara diputuskan untuk tidak menghapus semua data outlier, dikarenakan data outlier tersebut dirasa memiliki nilai yang penting dalam pemodelan machine learning yang akan dilakukan. Jika nantinya performa machine learning dari berbagai algoritma yang dibuat masih belum memuaskan maka akan dicoba untuk menghapus outlier-outlier tersebut.
 
-#### Handling `job` Kolom
+#### **Handling `job` Kolom**
 Untuk kolom `job` value-value berikut 'enterpreneur', 'unknown', 'retired', 'self-employed', 'unemployed', 'housemaid', dan 'student' dijadikan **'others'**, karena nilainya tidak banyak.
 
-#### Feature Transformation
+#### **Feature Transformation**
+Dilakukan feature transformation dengan menerapkan standard scaler kepada kolom-kolom numerik, yaitu kolom `age`, `balance` dan `duration` dikarenakan ketiga kolom tersebut memiliki variansi data yang besar (standar deviasi tinggi)
 
 
-#### Feature Encoding
+#### **Feature Encoding**
 Label Encoding dilakukan pada kolom `default`, `housing`, `loan`, `y`, `education`, dan `contact`.
 Sedangkan One Hot Encoding dilakukan pada kolom `job`, `marital`, `poutcome`.
 
 
 ### Feature Engineering
 
-#### Feature Selection
+#### **Feature Selection**
 
 #### ***Delete Unnecessary Columns***
 Berdasarlan hasil EDA, kolom month, previous diputuskan untuk tidak digunakan. Selain itu ada feature lain yaitu day dan pdays secara tidak langsung berhubungan dengan feature yang ingin dibuang.
@@ -144,10 +145,10 @@ Berdasarlan hasil EDA, kolom month, previous diputuskan untuk tidak digunakan. S
 
 Dapat dilihat bahwa tidak ada feature yang berkorelasi kuat dengan Target. Namun terdapat fitur yang redundan yaitu `marital_married` dan `marital_single` serta `poutcome_failure` dan `poutcome_unknown`. Untuk fitur-fitur yang redundan ini akan digunakan hanya salah satunya.
 
-#### Feature Extraction
+#### **Feature Extraction**
 Tidak dilakukan feature extraction karena dirasa feature yang tersedia sudah cukup untuk pemodelan machine learning sehingga tidak perlu dilakukan extraction
 
-#### Rekomendasi 4 Feature Tambahan
+#### **Rekomendasi 4 Feature Tambahan**
 - Jumlah anak/tanggungan
 - Memiliki produk deposito berjangka pada bank lain (y/n)
 - Sudah berapa lama menjadi nasabah bank tersebut
