@@ -111,5 +111,46 @@ Beberapa pengamatan dari *statistical summary* kolom kategorikal di atas:
 * Hasil visualisasi diatas dapat dilihat bahwa customer yang berstatus menikah dan single yang memiliki persentase paling besar untuk mendaftar deposito berjangka. Oleh sebab itu pihak bank bisa mulai fokus untuk memprioritaskan customer yang berstatus menikah dan single. Selain itu untuk meningkatkan kedua kelompok tersebut dalam mendaftar deposito berjangka pihak bank saat melakukan campaign kepada masing-masing individu dua kelompok tersebut dapat melakukan promosi dengan strategi pendekatan yang berbeda. Misalkan kepada kelompok "single" bisa melakukan promosi seperti "dengan bunga deposito dalam setahun adalah x% maka kira-kira dalam y tahun dana menikah akan dapat terkumpul". Sedangkan untuk kelompok "married" bisa melakukan promosi seperti "dengan bunga deposito dalam setahun adalah x% maka dana pendidikan untuk anak/dana pensiun saat masa tua akan terjamin"
 
 
+## Data Preprocessing
+
+### Data Cleansing
+
+#### Missing Values & Duplicate Data
+Pada data ini tidak ada missing values dan duplicate data
+
+#### Handling Outlier
+Untuk sementara diputuskan untuk tidak menghapus semua data outlier, dikarenakan data outlier tersebut dirasa memiliki nilai yang penting dalam pemodelan machine learning yang akan dilakukan. Jika nantinya performa machine learning dari berbagai algoritma yang dibuat masih belum memuaskan maka akan dicoba untuk menghapus outlier-outlier tersebut.
+
+#### Handling `job` Kolom
+Untuk kolom `job` value-value berikut 'enterpreneur', 'unknown', 'retired', 'self-employed', 'unemployed', 'housemaid', dan 'student' dijadikan **'others'**, karena nilainya tidak banyak.
+
+#### Feature Transformation
+
+
+#### Feature Encoding
+Label Encoding dilakukan pada kolom `default`, `housing`, `loan`, `y`, `education`, dan `contact`.
+Sedangkan One Hot Encoding dilakukan pada kolom `job`, `marital`, `poutcome`.
+
+
+### Feature Engineering
+
+#### Feature Selection
+
+#### ***Delete Unnecessary Columns***
+Berdasarlan hasil EDA, kolom month, previous diputuskan untuk tidak digunakan. Selain itu ada feature lain yaitu day dan pdays secara tidak langsung berhubungan dengan feature yang ingin dibuang.
+
+#### ***Delete Redundat Data***
+<img src="/image-stage2/heatmap_afterencod.png" alt="Alt text">
+
+Dapat dilihat bahwa tidak ada feature yang berkorelasi kuat dengan Target. Namun terdapat fitur yang redundan yaitu `marital_married` dan `marital_single` serta `poutcome_failure` dan `poutcome_unknown`. Untuk fitur-fitur yang redundan ini akan digunakan hanya salah satunya.
+
+#### Feature Extraction
+Tidak dilakukan feature extraction karena dirasa feature yang tersedia sudah cukup untuk pemodelan machine learning sehingga tidak perlu dilakukan extraction
+
+#### Rekomendasi 4 Feature Tambahan
+- Jumlah anak/tanggungan
+- Memiliki produk deposito berjangka pada bank lain (y/n)
+- Sudah berapa lama menjadi nasabah bank tersebut
+- Memiliki produk investasi lain selain deposito berjangka (y/n)
 
 
